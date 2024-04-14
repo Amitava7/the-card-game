@@ -1,0 +1,5 @@
+background : 003559
+enemy: D81E5B
+table : E0EEC6
+header: 4B296B
+friend: 80A4ED
