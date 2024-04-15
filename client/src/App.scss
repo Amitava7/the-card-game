@@ -13,12 +13,20 @@ $white-color: #ffffff;
 body{
     margin: 0 !important;
 }
+.play-arena{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 
 .poker-container {
     display:flex;
     justify-content: center;
     align-items: center;
     height: 500px;
+    width: 1000px;
 }
 .poker-table {
     max-width: 800px;
@@ -55,4 +63,42 @@ body{
         align-self: center;
         border-radius: 180px;
     }
+}
+.player-container{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.partner-container{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.op1-container{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 90deg;
+}
+.op2-container{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 90deg;
 }

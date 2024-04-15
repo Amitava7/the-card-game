@@ -1,22 +1,28 @@
 import { Box, CircularProgress } from '@mui/material';
 import { useEffect, useState, type FC } from 'react';
 
-interface CardProps {
+type CardProps= {
     suit: string;
     value: string;
+    back?: never;
+ } | {
+    suit?: never;
+    value?: never;
+    back: boolean;
  }
 
 
 const Card: FC<CardProps> = (props) => {
-    const {suit, value} = props;
+    const {suit, value, back} = props;
     const [loading, setLoading] = useState(true)
     const [imageError, setError] = useState<unknown>(null)
     const [image, setImage] = useState<string|undefined>(undefined)
 
     useEffect(() => {
         const fetchImage = async () => {
+            const url = back ? `./assets/back.png` :`./assets/${value}_of_${suit}.png`
             try {
-                const response = await import(`./assets/${value}_of_${suit}.png`) 
+                const response = await import(url) 
                 setImage(response.default)
             } catch (err) {
                 setError(err)
