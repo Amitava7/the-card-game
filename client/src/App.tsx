@@ -1,10 +1,14 @@
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import Card from './Card';
-
+import { getFreshHands } from './utils';
 import './App.scss'
 interface Props { }
 
 const App: FC<Props> = () => {
+
+  const [playerCards, setplayerCards] = useState<string[]>([""]);
+  const [tableCards, setTableCards] = useState<string[]>([""]);
+  const hands = getFreshHands()[0]
   return (
   <div className='play-arena'>
     <div className="poker-container">
@@ -14,10 +18,9 @@ const App: FC<Props> = () => {
       </div>
     </div>
     <div className="player-container">
-      <Card suit='spades' value='ace' />
-      <Card suit='hearts' value='king' />
-      <Card suit='hearts' value='queen' />
-      <Card suit='clubs' value='9' />
+    {
+      hands.map((card, index) => <Card key={index} value={card} />)
+    }
     </div>
 
     <div className="partner-container">
